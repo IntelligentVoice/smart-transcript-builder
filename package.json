@@ -1,0 +1,15 @@
+{
+  "name": "script",
+  "version": "0.1.0",
+  "description": "App to generate smart transcript HTML",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thai Mao",
+  "license": "MIT",
+  "dependencies": {
+    "xml2js": "^0.4.17"
+  }
+}
