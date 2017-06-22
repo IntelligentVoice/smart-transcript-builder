@@ -1,27 +1,12 @@
-The other job is basically do what I did for them before and create some plain HTML their web designers can work with (see attached)
+This is a NodeJS application that creates HTML files based on a IV document ID.
 
-I did this with some manual hacking but if you can script it we will use this again
+Installation:
 
-This time they want 8 of them created, for the 8 videos in https://comprindeo.intelligentvoice.com/JumpToWeb group 30 (Panel sessions)
+1. git clone <URL>
+2. From the terminal $npm install
 
 
-The videos are numbered 30000000 to 30000007
+Running:
+1. $node index <documentID>
 
-The data to generate the transcript can be got from the API e.g.
-https://jumpto_website:v64^MR7q$@comprindeo.intelligentvoice.com:8443/vrxServlet/ws/VRXService/vrxServlet/getDocument/30/1/30000001
-or
-https://jumpto_website:v64^MR7q$@comprindeo.intelligentvoice.com:8443/vrxServlet/ws/VRXService/vrxServlet/getDocument/30/1/30000007
-
-and the videos themselves are on the webserver e.g.
-https://comprindeo.intelligentvoice.com/JumpToWeb/sites/default/files/document_cache/30.30000002.30000002.mp4
-or
-https://comprindeo.intelligentvoice.com/JumpToWeb/sites/default/files/document_cache/30.30000007.30000007.mp4
-
-if we get time it would be good if we can change the colours to match http://comprindeo.com and use this logo:
-http://comprindeo.com/wp-content/uploads/2017/04/Logo-01.png
-
-Ideally I would like to have something ready for tomorrow afternoon if we have time!
-
-Hopefully that’s sort of clear, give me a shout if not.
-
-Thanks
+A HTML file should be generated based on the XML output of IV and should display a list of clickable tags that navigate the user to the position in the video file.
