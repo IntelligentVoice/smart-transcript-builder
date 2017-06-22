@@ -1,4 +1,4 @@
-function(tags, url) {
+function buildPage(tags, url) {
 	return `
 	<!DOCTYPE html>
 	<html slick-uniqueid="3"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -103,3 +103,5 @@ function(tags, url) {
 	</body></html>
 	`
 }
+
+module.exports = buildPage;
