@@ -1,27 +1,22 @@
-The other job is basically do what I did for them before and create some plain HTML their web designers can work with (see attached)
+A nodeJS application that generates smart video transcripts in HTML format
 
-I did this with some manual hacking but if you can script it we will use this again
+Installation Instructions
 
-This time they want 8 of them created, for the 8 videos in https://comprindeo.intelligentvoice.com/JumpToWeb group 30 (Panel sessions)
+1. $ git clone https://github.com/IntelligentVoice/smart-transcript-builder.git
+2. $ npm install
 
 
-The videos are numbered 30000000 to 30000007
+Running the application to generate smart transcripts html file(s):
 
-The data to generate the transcript can be got from the API e.g.
-https://jumpto_website:v64^MR7q$@comprindeo.intelligentvoice.com:8443/vrxServlet/ws/VRXService/vrxServlet/getDocument/30/1/30000001
-or
-https://jumpto_website:v64^MR7q$@comprindeo.intelligentvoice.com:8443/vrxServlet/ws/VRXService/vrxServlet/getDocument/30/1/30000007
+1. From the command line 
+    - $ node index.js <start_document_id> <end_document_id>
+    - i.e If you want to generate smart transcripts for documents 101 to 105 type in:
+      $ node index.js 101 105
 
-and the videos themselves are on the webserver e.g.
-https://comprindeo.intelligentvoice.com/JumpToWeb/sites/default/files/document_cache/30.30000002.30000002.mp4
-or
-https://comprindeo.intelligentvoice.com/JumpToWeb/sites/default/files/document_cache/30.30000007.30000007.mp4
+2. Then from your browser go to http://localhost:8080
 
-if we get time it would be good if we can change the colours to match http://comprindeo.com and use this logo:
-http://comprindeo.com/wp-content/uploads/2017/04/Logo-01.png
+Go back to the command line to see confirmation that your files have been successfully created
 
-Ideally I would like to have something ready for tomorrow afternoon if we have time!
+The html files are saved in the same path directory as this application inside a folder name 'html'
 
-Hopefully that’s sort of clear, give me a shout if not.
 
-Thanks

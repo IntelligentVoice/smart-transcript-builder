@@ -1,0 +1,10 @@
+/node_modules/
+/fixtures/
+/html/
+/json/
+/xml/
+.env
+template.html
+templateHamp.html
+urls.txt
+index.html

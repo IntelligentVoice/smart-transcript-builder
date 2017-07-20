@@ -1,9 +1,11 @@
-function buildPage(tags, url) {
+function buildPage(tags, url, words, linkers) {
+	
 	return `
 	<!DOCTYPE html>
 	<html slick-uniqueid="3"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	    <link rel="stylesheet" type="text/css" href="https://comprindeo.intelligentvoice.com/smarttranscript.css">
-	    <script>
+	    <link rel="stylesheet" type="text/css" href="styles.css">
+		<script>
+
 	        function scrollToView() {
 	            var a = document.getElementById("doc-scroller");
 	            var d = a.getElementsByClassName('highlight');
@@ -19,6 +21,7 @@ function buildPage(tags, url) {
 	            }
 	        }
 	        function getClosestValues(a, x) {
+				
 	            var lo = -1, hi = a.length;
 	            while (hi - lo > 1) {
 	                var mid = Math.round((lo + hi) / 2);
@@ -30,6 +33,7 @@ function buildPage(tags, url) {
 	            }
 	            if (a[lo] === x)
 	                hi = lo;
+				
 	            return [a[lo], a[hi]];
 	        }
 	        function seek2(pos, offset) {
@@ -60,9 +64,15 @@ function buildPage(tags, url) {
 	            <td id="table_1">
 	                <div id="doc-main">
 	                   
-	                    <video id="media_player" controls=""><source src="${url}"></video>
-	                    <!-- <div id="position"></div> -->
-	                    <div style="position:relative;" id="doc-scroller"></div>
+	                    <video id="media_player" controls=""
+						style="width:600px;"><source src="${url}"></video>
+						
+	                    <div style="position:relative;" id="doc-scroller">
+							
+							${words}
+							
+							
+						</div>
 	                </div>
 	            </td>
 	        </tr>
@@ -70,19 +80,22 @@ function buildPage(tags, url) {
 	</div>
 	<script>
 	    var media_player = document.getElementById('media_player'),
-	        current_links = [],
-	        linkers = [];
-	    document.addEventListener('DOMContentLoaded', function () {
+	        current_links = [];
+
+	    document.addEventListener('DOMContentLoaded', () => {
 	        media_player.play(); // Auto-buffer.
 	        media_player.pause();
-	        media_player.addEventListener("timeupdate", function () {
+	        media_player.addEventListener("timeupdate", () => {
+				
 	            for (var i = 0; i < current_links.length; i++) {
 	                if (!isNaN(current_links[i])) {
 	                    document.getElementById("position_" + current_links[i]).className = "";
 	                }
 	            }
-	            var g = getClosestValues(linkers, media_player.currentTime * 1000);
+
+	            var g = getClosestValues(${linkers}, media_player.currentTime);
 	            current_links = g;
+				
 	            var a = document.getElementById("doc-scroller");
 	            for (var i = 0; i < g.length; i++) {
 	                if (!isNaN(g[i])) {
@@ -96,8 +109,9 @@ function buildPage(tags, url) {
 	        });
 	    });
 	    // @body
-	    var body = '',
-	        spkr = 0;
+	    // @body
+			var body = '',
+				spkr = 0;
 	    
 	    </script> 
 	</body></html>
