@@ -1,4 +1,4 @@
-A nodeJS application that generates smart video transcripts in HTML format
+A nodeJS application that generates automated smart video transcripts in HTML format
 
 Installation Instructions
 
@@ -18,3 +18,5 @@ Running the application to generate smart transcripts html file(s):
 Go back to the command line to see confirmation that your files have been successfully created
 
 The html files are saved in the same path directory as this application inside a folder name 'html'
+
+There are plans to create a frontend interface to move the user selection of documents away from the command line.
