@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 A nodeJS application that generates smart video transcripts in HTML format
 
 Installation Instructions
@@ -20,3 +21,17 @@ Go back to the command line to see confirmation that your files have been succes
 The html files are saved in the same path directory as this application inside a folder name 'html'
 
 
+=======
+This is a NodeJS application that creates HTML files based on a IV document ID.
+
+Installation:
+
+1. git clone <URL>
+2. From the terminal $npm install
+
+
+Running:
+1. $node index <documentID>
+
+A HTML file should be generated based on the XML output of IV and should display a list of clickable tags that navigate the user to the position in the video file.
+>>>>>>> ff717fdc6d5e4dc18d0b489700812197d9afd0f5
